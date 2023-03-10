@@ -1,19 +1,7 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyBljkdlX7TV_7-CBO8tAS4ytXW6OrsgErE",
-    authDomain: "voting-e346d.firebaseapp.com",
-    projectId: "voting-e346d",
-    storageBucket: "voting-e346d.appspot.com",
-    messagingSenderId: "652681224630",
-    appId: "1:652681224630:web:a0468b00a12cf88903a117",
-    measurementId: "G-VQV12W5X4W"
-  };
-  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
 $(document).ready(function(){
-    
+
+ 
     // Variables
     var clickedTab = $(".tabs > .active");
     var tabWrapper = $(".tab__content");
@@ -66,11 +54,24 @@ $(document).ready(function(){
             });
         });
     });
-});
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyBljkdlX7TV_7-CBO8tAS4ytXW6OrsgErE",
+        authDomain: "voting-e346d.firebaseapp.com",
+        projectId: "voting-e346d",
+        storageBucket: "voting-e346d.appspot.com",
+        messagingSenderId: "652681224630",
+        appId: "1:652681224630:web:a0468b00a12cf88903a117",
+        measurementId: "G-VQV12W5X4W"
+      };
+      
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    
+    
 
-
-  var userData
+    var userData
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -114,3 +115,7 @@ function loginSuccess(){
     d("userName").innerHTML = userData["displayName"];
     d("userDP").src = userData["photoURL"];
 }
+});
+
+
+
