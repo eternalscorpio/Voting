@@ -111,7 +111,7 @@ var slideNo = 0;
 var uid = "";
 var slideUrl = "";
 
-      function signInWithEmailPassword() {
+      function signInWithEmailAndPassword() {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
     
