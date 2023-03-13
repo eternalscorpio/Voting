@@ -14,42 +14,6 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const database = firebase.database()
 
-
-var userData
-
-var credential;
-var errorCodes = {};
-
-function googleSignInPopup() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  console.log("here");
-  firebase.auth().signInWithPopup(provider).then((result) => {
-    credential = result.credential;
-    var token = credential.accessToken;
-    userData = result.user;
-  }).catch((error) => {
-    errorCodes["errorCode"] = error.code;
-    errorCodes["errorMessage"] = error.message;
-    errorCodes["email"] = error.email;
-    errorCodes["credential"] = error.credential;
-  });
-}
-
-var user;
-
-function loginSuccess(userData) {
-  console.log("User Logged in Successfully")
-  try {
-    afterLogin(userData);
-  } catch (error) {
-    console.log("error: " + error);
-  }
-  user = userData;
-  console.log(userData.uid);
-  queueListener(userData)
-}
-
-
 // Set up our register function
 function register () {
   // Get all our input fields
