@@ -115,8 +115,7 @@ var slideUrl = "";
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
     
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .tan((userCredential) => {
+        firebase.auth().signInWithEmailAndPassword(email, password).tan((userCredential) => {
                 console.log("Signed in");
                 loginSuccess();
                 var user = userCredential.user;
