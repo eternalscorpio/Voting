@@ -1,57 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="./login and register/style.css">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login + Firebase Database</title>
+         <!-- Cool Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" type="text/css" href="register/style.css">
+    </head>
+    <body>
+        <div id="content_container">
+            <div id="form_container">
+                <div id="form_header_container">
+                    <h2 id="form_header"> Login + Firebase Database </h2>
+                </div>
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<section class="loginWrapper">
-  
-	<ul class="tabs">
-		<li class="active">Login</li>
-		<li>Register</li>
-	</ul>
+                <div id="form_content_container">
+                    <div id="form_content_inner_container">
+                        <input type="text" id="full_name" placeholder="Full name">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="password" id="password" placeholder="New Password">
 
-	<ul class="tab__content">
-    
-		<li class="active">
-			<div class="content__wrapper">
-				<form method="POST" action="">
-					<input id="email" type="email" name="email" placeholder="email">
-					<input id="password" type="password" name="password" placeholder="Password">
-					<button onclick="signInWithEmailAndPassword()" type="submit">Login</button>
-				</form>
-			</div>
-		</li>
-   
-		<li>
-			<div class="content__wrapper">
-				<form method="POST" action="">
-					<input type="name" name="name" placeholder="Username">
-					<input type="email" name="email" placeholder="email">
-					<input type="password" name="password" placeholder="Password">
-					<input type="repass" name="repass" placeholder="Repeat-Password">
-					<input type="submit" value="Register" name="register">
-				</form>
-			</div>
-		</li>
-  
-	</ul>
+                        <input type="text" id="favourite_song" placeholder="The Best Song Ever">
+                        <input type="text" id="milk_before_cereal" placeholder="Milk Before Cereal? ( Yes | No )">
 
-</section>
+                        <div id="button_container">
+                            <button onclick="login()">Login</button>
+                            <button onclick="register()">Register</button>
+                        </div>
 
-	<div class="logginFormFooter">
-	</div>
-<!-- partial -->
-<script  src="https://DominicwalterLOF.github.io/singularity/website/src/firebase/firebase-app.js"></script>
-<script  src="https://DominicwalterLOF.github.io/singularity/website/src/firebase/firebase.js"></script>
-<script src="https://DominicwalterLOF.github.io/singularity/website/src/firebase/firebase-auth.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script  src="./login and register/script.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
- 
-</body>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="register/script.js"></script>
+
 </html>
