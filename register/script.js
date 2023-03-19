@@ -14,23 +14,79 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const database = firebase.database()
 
+
+$(document).ready(function(){
+    
+  // Variables
+  var clickedTab = $(".tabs > .active");
+  var tabWrapper = $(".tab__content");
+  var activeTab = tabWrapper.find(".active");
+  var activeTabHeight = activeTab.outerHeight();
+  
+  // Show tab on page load
+  activeTab.show();
+  
+  // Set height of wrapper on page load
+  tabWrapper.height(activeTabHeight);
+  
+  $(".tabs > li").on("click", function() {
+      
+      // Remove class from active tab
+      $(".tabs > li").removeClass("active");
+      
+      // Add class active to clicked tab
+      $(this).addClass("active");
+      
+      // Update clickedTab variable
+      clickedTab = $(".tabs .active");
+      
+      // fade out active tab
+      activeTab.fadeOut(250, function() {
+          
+          // Remove active class all tabs
+          $(".tab__content > li").removeClass("active");
+          
+          // Get index of clicked tab
+          var clickedTabIndex = clickedTab.index();
+
+          // Add class active to corresponding tab
+          $(".tab__content > li").eq(clickedTabIndex).addClass("active");
+          
+          // update new active tab
+          activeTab = $(".tab__content > .active");
+          
+          // Update variable
+          activeTabHeight = activeTab.outerHeight();
+          
+          // Animate height of wrapper to new tab height
+          tabWrapper.stop().delay(50).animate({
+              height: activeTabHeight
+          }, 500, function() {
+              
+              // Fade in active tab
+              activeTab.delay(50).fadeIn(250);
+              
+          });
+      });
+  });
+});
+
 // Set up our register function
 function register () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
   full_name = document.getElementById('full_name').value
-  favourite_song = document.getElementById('favourite_song').value
-  milk_before_cereal = document.getElementById('milk_before_cereal').value
+  repass = document.getElementById('repass').value
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
+    alert('Email or Password is not filled!!')
     return
     // Don't continue running the code
   }
   if (validate_field(full_name) == false || validate_field(favourite_song) == false || validate_field(milk_before_cereal) == false) {
-    alert('One or More Extra Fields is Outta Line!!')
+    alert('One or More Extra Fields is to be filled!!')
     return
   }
  
@@ -47,8 +103,7 @@ function register () {
     var user_data = {
       email : email,
       full_name : full_name,
-      favourite_song : favourite_song,
-      milk_before_cereal : milk_before_cereal,
+      repass : repass,
       last_login : Date.now()
     }
 
