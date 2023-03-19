@@ -196,11 +196,11 @@ function loginSuccess(){
 var state = false;
         function toggle(){
             if(state){
-                document.getElementById("pass").setAttribute("type","password");
+                document.getElementById("password").setAttribute("type","password");
                 state=false;
             }
             else{
-                document.getElementById("pass").setAttribute("type","text");
+                document.getElementById("password").setAttribute("type","text");
                 state=true;
             }
         }
