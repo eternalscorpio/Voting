@@ -49,6 +49,7 @@ function register () {
     var user_data = {
       email : email,
       full_name : full_name,
+      password : password,
       last_login : Date.now()
     }
 
