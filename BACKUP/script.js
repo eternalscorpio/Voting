@@ -144,6 +144,35 @@ if (field.length <= 0) {
 }
 }
 
+var credential;
+
+function googleSignInPopup() {
+
+    var provider1 = new firebase.auth.GoogleAuthProvider();
+    console.log("here");
+    firebase.auth().signInWithPopup(provider1).then((result) => {
+        credential = result.credential;
+        console.log(credential["photoURL"]);
+        console.log("suc");
+        var token = credential.accessToken;
+        var user = result.user;
+        console.log("loggedin");
+        showToast("Logged In Successfully", 5);
+    }).catch((error) => {
+        //var errorCode = error.code;
+        //var errorMessage = error.message;
+        //var email = error.email;
+        //var credential = error.credential;
+        showToast(error.message, 5);
+    });
+}
+
+
+function loginSuccess(){
+    d("userName").innerHTML = userData["displayName"];
+    d("userDP").src = userData["photoURL"];
+}
+
 var state = false;
         function toggle(){
             if(state){
