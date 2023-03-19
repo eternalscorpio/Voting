@@ -1,3 +1,4 @@
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBljkdlX7TV_7-CBO8tAS4ytXW6OrsgErE",
@@ -30,7 +31,7 @@ function register () {
     return
     // Don't continue running the code
   }
-  if (validate_field(full_name) == false || validate_field(favourite_song) == false || validate_field(milk_before_cereal) == false) {
+  if (validate_field(full_name) == false) {
     alert('One or More Extra Fields is to be filled!!')
     return
   }
@@ -48,7 +49,6 @@ function register () {
     var user_data = {
       email : email,
       full_name : full_name,
-      repass : repass,
       last_login : Date.now()
     }
 
@@ -143,3 +143,18 @@ if (field.length <= 0) {
   return true
 }
 }
+
+var state = false;
+        function toggle(){
+            if(state){
+                document.getElementById("pass").setAttribute("type","password");
+                state=false;
+            }
+            else{
+                document.getElementById("pass").setAttribute("type","text");
+                state=true;
+            }
+        }
+        function myFunction(show){
+            show.classList.toggle("fa-eye-slash");
+        }
