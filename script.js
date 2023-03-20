@@ -152,6 +152,10 @@ function returnToast(toastMessage, tcounter) {
 
 var toastCount = 0;
 
+function d(e){
+  return document.getElementById(e);
+}
+
 function showToast(toastMessage, time) {
   toastCount = toastCount + 1;
   toastRAW = returnToast(toastMessage, toastCount);
