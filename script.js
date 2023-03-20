@@ -212,3 +212,15 @@ var state = false;
         function myFunction(show){
             show.classList.toggle("fa-eye-slash");
         }
+
+var state = false;
+  function toggle(){
+    if(state){
+      document.getElementById("repassword").setAttribute("type","password");
+        state=false;
+    }
+    else{
+      document.getElementById("repassword").setAttribute("type","text");
+        state=true;
+    }
+  }
