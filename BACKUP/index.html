@@ -17,18 +17,24 @@
             <div class="login-form">
                 <div class="sign-in-html">
                     <div class="group">
-                        <label for="user" class="label">Email</label>
+                        <label for="user" class="label">Roll number</label>
                         <input type="text" id="email" autocomplete="off" class="input">
                     </div>
                     <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <div class="pass-container">
-                            <input type="password" id="password" class="input"
-                                data-type="password">
-                            <span class="show-pass" id="show-pass" onclick="toggle()">
-                                <i class="far fa-eye" onclick="myFunction(this)"></i>
-                            </span>
-                        </div>
+                        <label for="user" class="label">Department</label>
+                        <select class="input">  
+                            <option value="Course">Course</option>  
+                            <option value="BCA">BCA</option>  
+                            <option value="BBA">BBA</option>  
+                            <option value="B.Tech">B.Tech</option>  
+                            <option value="MBA">MBA</option>  
+                            <option value="MCA">MCA</option>  
+                            <option value="M.Tech">M.Tech</option>  
+                            </select>
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Year</label>
+                        <input type="text" id="email" autocomplete="off" class="input">
                     </div>
                     <div class="group">
                         <input type="submit" class="button" onclick="login ()" value="Sign In">
