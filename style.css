@@ -24,7 +24,7 @@ a {
   height: 100%;
   width: 100%;
   position: fixed;
-  background: url(https://i.postimg.cc/mZ5HZML0/travel.jpg) no-repeat center/cover;
+  background: url('ElectionBackground1.jpg') no-repeat center/cover;
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
@@ -35,7 +35,7 @@ a {
   max-width: 320px;
   max-height: 500px;
   position: relative;
-  background: url(https://i.postimg.cc/mZ5HZML0/travel.jpg) no-repeat center/cover;
+  background: url('') no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.692), 0 17px 50px 0 black;
   overflow: hidden;
