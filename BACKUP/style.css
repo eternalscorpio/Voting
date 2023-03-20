@@ -50,13 +50,13 @@ a {
 
 .login-heading {
   width: 100%;
-  padding: 15px;
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
 
 .login-html .tab {
-  font-size: 30px;
+  font-size: 25px;
   display: inline-block;
 }
 
@@ -64,6 +64,9 @@ a {
   display: none;
 }
 
+option{
+  color: black;
+}
 .login-html .tab,
 .login-form .group .label,
 .login-form .group .button {
