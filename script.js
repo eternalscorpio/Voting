@@ -151,6 +151,8 @@ function returnToast(toastMessage, tcounter) {
   return tm;
 }
 
+var toastCount = 0;
+
 function showToast(toastMessage, time) {
   toastCount = toastCount + 1;
   toastRAW = returnToast(toastMessage, toastCount);
